@@ -1,20 +1,5 @@
 [
   {
-    "id": "15-pro-max",
-    "title": "iPhone 15 Pro Max",
-    "year": "2023",
-    "storage": "256 GB",
-    "condition": "A+",
-    "color": "Tytan naturalny",
-    "price": 4899,
-    "battery": "96%",
-    "badge": "Nowość",
-    "className": "phone-natural",
-    "categories": ["pro"],
-    "images": [],
-    "active": true
-  },
-  {
     "id": "15-pro",
     "title": "iPhone 15 Pro",
     "year": "2023",
@@ -25,7 +10,9 @@
     "battery": "94%",
     "badge": "Top wybór",
     "className": "phone-black",
-    "categories": ["pro"],
+    "categories": [
+      "pro"
+    ],
     "images": [],
     "active": true
   },
@@ -40,7 +27,10 @@
     "battery": "91%",
     "badge": "Ostatnia sztuka",
     "className": "phone-purple",
-    "categories": ["pro", "value"],
+    "categories": [
+      "pro",
+      "value"
+    ],
     "images": [],
     "active": true
   },
@@ -55,7 +45,9 @@
     "battery": "90%",
     "badge": "Najlepsza cena",
     "className": "phone-blue",
-    "categories": ["value"],
+    "categories": [
+      "value"
+    ],
     "images": [],
     "active": true
   }
