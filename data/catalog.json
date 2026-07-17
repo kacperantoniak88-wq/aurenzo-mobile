@@ -1,23 +1,5 @@
 [
   {
-    "id": "14-pro-max",
-    "title": "iPhone 14 Pro Max",
-    "year": "2022",
-    "storage": "256 GB",
-    "condition": "A",
-    "color": "Głęboka purpura",
-    "price": 3399,
-    "battery": "91%",
-    "badge": "Ostatnia sztuka",
-    "className": "phone-purple",
-    "categories": [
-      "pro",
-      "value"
-    ],
-    "images": [],
-    "active": true
-  },
-  {
     "id": "13",
     "title": "iPhone 13",
     "year": "2021",
