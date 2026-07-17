@@ -1,22 +1,5 @@
 [
   {
-    "id": "15-pro",
-    "title": "iPhone 15 Pro",
-    "year": "2023",
-    "storage": "128 GB",
-    "condition": "A",
-    "color": "Tytan czarny",
-    "price": 4199,
-    "battery": "94%",
-    "badge": "Top wybór",
-    "className": "phone-black",
-    "categories": [
-      "pro"
-    ],
-    "images": [],
-    "active": false
-  },
-  {
     "id": "14-pro-max",
     "title": "iPhone 14 Pro Max",
     "year": "2022",
