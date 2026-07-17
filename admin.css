@@ -1,0 +1,525 @@
+.admin-body {
+  min-height: 100vh;
+  background: #e8e5de;
+  color: var(--ink);
+}
+
+.admin-header {
+  display: flex;
+  min-height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px max(28px, 4vw);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.admin-header > div {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-back {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.admin-main {
+  width: min(1420px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 88px 0 70px;
+}
+
+.admin-intro {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr 1fr;
+  align-items: end;
+  gap: 50px;
+  padding-bottom: 68px;
+}
+
+.admin-intro h1 {
+  margin: 0;
+  font-size: clamp(48px, 5.8vw, 88px);
+  font-weight: 300;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.admin-intro h1 em {
+  color: #a48859;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.admin-intro > p:last-child {
+  margin: 0;
+  color: #68645e;
+  line-height: 1.7;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.github-panel {
+  margin-bottom: 18px;
+}
+
+.connection-dot {
+  width: 13px !important;
+  height: 13px !important;
+  border: 0 !important;
+  background: #a7a299;
+}
+
+.connection-dot.connected {
+  background: #4f8c60;
+  box-shadow: 0 0 0 7px rgba(79, 140, 96, 0.12);
+}
+
+.github-panel-body {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 60px;
+  padding: 32px 28px;
+}
+
+.github-copy {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.github-copy p {
+  margin: 0 0 20px;
+  color: #5f5b55;
+  line-height: 1.7;
+}
+
+.github-copy p.error {
+  color: #a33c35;
+}
+
+.github-copy a {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.github-copy small {
+  margin-top: 20px;
+  color: #827e76;
+  line-height: 1.6;
+}
+
+.github-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+
+.github-form label {
+  display: flex;
+  flex-direction: column;
+  color: #77736c;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.github-form input {
+  height: 48px;
+  margin-top: 6px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  background: #ebe8e1;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.github-form input:focus {
+  border-color: var(--ink);
+}
+
+.github-connect {
+  grid-column: 1 / -1;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.github-connect:disabled,
+.admin-submit:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.admin-panel {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.admin-panel-heading {
+  display: flex;
+  min-height: 92px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.admin-panel-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.admin-panel-heading span,
+.admin-panel-heading small {
+  color: #8d897f;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.admin-panel-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.admin-panel-heading > strong {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.add-panel form {
+  padding: 28px;
+}
+
+.upload-zone {
+  display: flex;
+  min-height: 190px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px dashed #aaa59c;
+  background: #ece9e2;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.upload-zone:hover,
+.upload-zone.is-dragging {
+  border-color: var(--ink);
+  background: #e4e0d6;
+}
+
+.upload-zone input,
+.import-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upload-zone strong {
+  margin: 12px 0 7px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.upload-zone small {
+  color: #77736c;
+}
+
+.upload-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.image-preview:empty {
+  display: none;
+}
+
+.image-preview figure {
+  position: relative;
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  background: #ddd9d0;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-preview span {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.72);
+  color: white;
+  font-size: 8px;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 18px;
+  margin-top: 24px;
+}
+
+.admin-form-grid label {
+  display: flex;
+  flex-direction: column;
+  color: #77736c;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-form-grid input,
+.admin-form-grid select {
+  width: 100%;
+  height: 52px;
+  margin-top: 7px;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.admin-form-grid input:focus,
+.admin-form-grid select:focus {
+  border-bottom-color: var(--ink);
+}
+
+.admin-span-2 {
+  grid-column: 1 / -1;
+}
+
+.admin-submit {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.admin-message {
+  min-height: 18px;
+  margin: 14px 0 0;
+  color: #3c724b;
+  font-size: 11px;
+}
+
+.admin-message.error {
+  color: #a33c35;
+}
+
+.inventory-list {
+  max-height: 935px;
+  overflow: auto;
+}
+
+.inventory-item {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 18px;
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.inventory-item.is-hidden-product {
+  opacity: 0.48;
+}
+
+.inventory-thumb {
+  display: grid;
+  width: 76px;
+  height: 92px;
+  place-items: center;
+  overflow: hidden;
+  background: #ddd9d0;
+}
+
+.inventory-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inventory-thumb span {
+  font-family: Georgia, serif;
+  font-size: 28px;
+}
+
+.inventory-details {
+  min-width: 0;
+}
+
+.inventory-details > span {
+  color: #8a867e;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inventory-details h3 {
+  margin: 6px 0 5px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.inventory-details p {
+  margin: 0;
+  color: #5f5c57;
+  font-size: 12px;
+}
+
+.inventory-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 17px;
+}
+
+.inventory-actions button,
+.admin-reset {
+  padding: 0 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.inventory-actions .delete-product {
+  color: #a33c35;
+}
+
+.admin-tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 18px;
+  padding: 50px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.admin-tools h2 {
+  margin: 14px 0;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.admin-tools p:last-child {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.46);
+  line-height: 1.7;
+}
+
+.admin-tool-buttons {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-tool-buttons .button {
+  justify-content: center;
+  cursor: pointer;
+}
+
+.admin-reset {
+  align-self: center;
+  margin-top: 8px;
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.admin-notice {
+  margin-top: 18px;
+  padding: 18px 22px;
+  border: 1px solid #bda875;
+  background: #eee7d5;
+  color: #62563d;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.admin-notice code {
+  font-size: 11px;
+}
+
+@media (max-width: 980px) {
+  .admin-intro { grid-template-columns: 1fr; gap: 24px; }
+  .github-panel-body { grid-template-columns: 1fr; gap: 30px; }
+  .admin-layout { grid-template-columns: 1fr; }
+  .inventory-list { max-height: none; }
+}
+
+@media (max-width: 650px) {
+  .admin-header { min-height: 72px; padding-inline: 18px; }
+  .admin-header > div > span { display: none; }
+  .admin-main { width: calc(100% - 24px); padding-top: 56px; }
+  .admin-intro { padding-inline: 6px; padding-bottom: 42px; }
+  .admin-intro h1 { font-size: 50px; }
+  .github-panel-body { padding: 24px 18px; }
+  .github-form { grid-template-columns: 1fr; }
+  .github-connect { grid-column: auto; }
+  .add-panel form { padding: 18px; }
+  .admin-form-grid { grid-template-columns: 1fr; }
+  .admin-span-2 { grid-column: auto; }
+  .image-preview { grid-template-columns: repeat(2, 1fr); }
+  .admin-tools { grid-template-columns: 1fr; gap: 28px; padding: 34px 24px; }
+  .admin-panel-heading { padding-inline: 18px; }
+}

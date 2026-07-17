@@ -1,0 +1,62 @@
+[
+  {
+    "id": "15-pro-max",
+    "title": "iPhone 15 Pro Max",
+    "year": "2023",
+    "storage": "256 GB",
+    "condition": "A+",
+    "color": "Tytan naturalny",
+    "price": 4899,
+    "battery": "96%",
+    "badge": "Nowość",
+    "className": "phone-natural",
+    "categories": ["pro"],
+    "images": [],
+    "active": true
+  },
+  {
+    "id": "15-pro",
+    "title": "iPhone 15 Pro",
+    "year": "2023",
+    "storage": "128 GB",
+    "condition": "A",
+    "color": "Tytan czarny",
+    "price": 4199,
+    "battery": "94%",
+    "badge": "Top wybór",
+    "className": "phone-black",
+    "categories": ["pro"],
+    "images": [],
+    "active": true
+  },
+  {
+    "id": "14-pro-max",
+    "title": "iPhone 14 Pro Max",
+    "year": "2022",
+    "storage": "256 GB",
+    "condition": "A",
+    "color": "Głęboka purpura",
+    "price": 3399,
+    "battery": "91%",
+    "badge": "Ostatnia sztuka",
+    "className": "phone-purple",
+    "categories": ["pro", "value"],
+    "images": [],
+    "active": true
+  },
+  {
+    "id": "13",
+    "title": "iPhone 13",
+    "year": "2021",
+    "storage": "128 GB",
+    "condition": "A",
+    "color": "Niebieski",
+    "price": 2199,
+    "battery": "90%",
+    "badge": "Najlepsza cena",
+    "className": "phone-blue",
+    "categories": ["value"],
+    "images": [],
+    "active": true
+  }
+]

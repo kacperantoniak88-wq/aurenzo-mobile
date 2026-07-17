@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aurenzo Mobile — wyselekcjonowane urządzenia Apple, profesjonalny skup, wymiana i serwis."
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Aurenzo Mobile — Premium Apple Devices</title>
+    <link rel="icon" type="image/png" href="assets/aurenzo-social-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="catalog-store.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="page-loader" aria-hidden="true">
+      <div class="loader-mark">A</div>
+    </div>
+
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="Aurenzo Mobile — strona główna">
+        <span class="brand-name">AURENZO</span>
+        <span class="brand-sub">MOBILE</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Główna nawigacja">
+        <a href="#collection">Telefony</a>
+        <a href="#sell">Sprzedaj telefon</a>
+        <a href="#service">Serwis</a>
+        <a href="#about">O nas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-contact" href="#contact">Kontakt</a>
+        <button class="menu-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="mobile-nav" aria-label="Menu mobilne">
+        <a href="#collection">Telefony <span>01</span></a>
+        <a href="#sell">Sprzedaj telefon <span>02</span></a>
+        <a href="#service">Serwis <span>03</span></a>
+        <a href="#about">O nas <span>04</span></a>
+        <a href="#contact">Kontakt <span>05</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" role="img" aria-label="Kolekcja telefonów premium Aurenzo Mobile"></div>
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="hero-content shell">
+          <p class="eyebrow reveal">Aurenzo / Premium Mobile Devices</p>
+          <h1 id="hero-title" class="reveal reveal-delay-1">
+            Technologia,<br />
+            <em>której możesz zaufać.</em>
+          </h1>
+          <p class="hero-copy reveal reveal-delay-2">
+            Wyselekcjonowane urządzenia Apple. Zweryfikowane pochodzenie,
+            transparentny stan i opieka również po zakupie.
+          </p>
+          <div class="hero-cta reveal reveal-delay-3">
+            <a class="button button-light" href="#collection">Zobacz kolekcję</a>
+            <a class="text-link" href="#sell">Wyceń swój telefon <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-foot shell reveal reveal-delay-3">
+          <span>Polska · sprzedaż online</span>
+          <span class="hero-scroll">Odkryj Aurenzo <i></i></span>
+          <span>Est. 2026</span>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Standard Aurenzo">
+        <div class="shell trust-grid">
+          <div><strong>40+</strong><span>punktów kontroli</span></div>
+          <div><strong>Każdy</strong><span>egzemplarz po diagnostyce</span></div>
+          <div><strong>24 h</strong><span>wysyłka dostępnych modeli</span></div>
+          <div><strong>100%</strong><span>sprawdzone pochodzenie</span></div>
+        </div>
+      </section>
+
+      <section class="collection section shell" id="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">— 01 / Kolekcja</p>
+            <h2 id="collection-title">Aktualnie dostępne.</h2>
+          </div>
+          <p>
+            Każde urządzenie przechodzi pełną diagnostykę i otrzymuje indywidualną
+            kartę stanu technicznego.
+          </p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtruj telefony">
+          <button class="filter active" type="button" data-filter="all">Wszystkie</button>
+          <button class="filter" type="button" data-filter="pro">Modele Pro</button>
+          <button class="filter" type="button" data-filter="value">Do 3 500 zł</button>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="catalog-empty" id="catalog-empty" hidden>Aktualnie przygotowujemy nową ofertę. Wróć do nas wkrótce.</p>
+
+        <div class="collection-footer">
+          <p>Nie widzisz odpowiedniego modelu?</p>
+          <a class="text-link dark-link" href="#contact">Znajdziemy go dla Ciebie <span>↗</span></a>
+        </div>
+      </section>
+
+      <section class="principles section" id="about" aria-labelledby="principles-title">
+        <div class="shell">
+          <div class="section-heading light-heading">
+            <div>
+              <p class="section-index">— 02 / Standard</p>
+              <h2 id="principles-title">Cztery filary Aurenzo.</h2>
+            </div>
+            <p>Od pierwszej weryfikacji urządzenia po opiekę serwisową po zakupie.</p>
+          </div>
+
+          <div class="principles-list">
+            <article>
+              <span>I</span>
+              <h3>Selekcja</h3>
+              <p>Wybieramy wyłącznie urządzenia, których stan i historię możemy rzetelnie potwierdzić.</p>
+              <i>01</i>
+            </article>
+            <article>
+              <span>II</span>
+              <h3>Weryfikacja</h3>
+              <p>IMEI, podzespoły, bateria, aparaty i funkcje bezpieczeństwa — ponad 40 punktów kontroli.</p>
+              <i>02</i>
+            </article>
+            <article>
+              <span>III</span>
+              <h3>Serwis</h3>
+              <p>Precyzyjna naprawa, jasna wycena przed rozpoczęciem prac i protokół wykonanej usługi.</p>
+              <i>03</i>
+            </article>
+            <article>
+              <span>IV</span>
+              <h3>Opieka</h3>
+              <p>Pomoc przed zakupem, migracja danych i wsparcie również wtedy, gdy urządzenie jest już Twoje.</p>
+              <i>04</i>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="sell-section section" id="sell" aria-labelledby="sell-title">
+        <div class="shell sell-grid">
+          <div class="sell-copy">
+            <p class="section-index">— 03 / Skup i wymiana</p>
+            <h2 id="sell-title">Twój telefon nadal ma wartość.</h2>
+            <p>
+              Odpowiedz na kilka pytań i otrzymaj wstępną wycenę. Możesz sprzedać
+              urządzenie albo rozliczyć je przy zakupie kolejnego modelu.
+            </p>
+            <ul>
+              <li><span>01</span> Wycena bez zobowiązań</li>
+              <li><span>02</span> Bezpieczne usunięcie danych</li>
+              <li><span>03</span> Wypłata lub wymiana na nowszy model</li>
+            </ul>
+          </div>
+
+          <form class="valuation-form" id="valuation-form">
+            <div class="form-top"><span>Wycena online</span><small>około 60 sekund</small></div>
+            <label>
+              Model urządzenia
+              <select name="model" required>
+                <option value="" selected disabled>Wybierz model</option>
+                <option>iPhone 15 Pro Max</option>
+                <option>iPhone 15 Pro</option>
+                <option>iPhone 15 / 15 Plus</option>
+                <option>iPhone 14 Pro / Pro Max</option>
+                <option>iPhone 14 / 14 Plus</option>
+                <option>iPhone 13 / 13 mini</option>
+                <option>Inny model</option>
+              </select>
+            </label>
+            <div class="form-row">
+              <label>
+                Pamięć
+                <select name="storage" required>
+                  <option value="" selected disabled>Wybierz</option>
+                  <option>128 GB</option><option>256 GB</option><option>512 GB</option><option>1 TB</option>
+                </select>
+              </label>
+              <label>
+                Stan wizualny
+                <select name="condition" required>
+                  <option value="" selected disabled>Wybierz</option>
+                  <option>Idealny</option><option>Bardzo dobry</option><option>Widoczne ślady</option><option>Uszkodzony</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Numer telefonu lub e-mail
+              <input name="contact" type="text" placeholder="np. 500 000 000" required />
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" required />
+              <span>Akceptuję kontakt w sprawie wyceny i politykę prywatności.</span>
+            </label>
+            <button class="button button-dark" type="submit">Otrzymaj wycenę <span>↗</span></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="service-section" id="service" aria-labelledby="service-title">
+        <div class="service-image" role="img" aria-label="Precyzyjna naprawa smartfona w serwisie Aurenzo"></div>
+        <div class="service-panel">
+          <p class="section-index">— 04 / Serwis</p>
+          <h2 id="service-title">Precyzja na poziomie komponentu.</h2>
+          <p>
+            Od wymiany baterii i wyświetlacza po diagnostykę płyty głównej.
+            Każdą naprawę rozpoczynamy od diagnozy i jasnej wyceny.
+          </p>
+          <div class="service-options">
+            <button type="button" data-service="Wymiana wyświetlacza"><span>01</span> Wyświetlacze <b>↗</b></button>
+            <button type="button" data-service="Wymiana baterii"><span>02</span> Baterie <b>↗</b></button>
+            <button type="button" data-service="Naprawa aparatu"><span>03</span> Aparaty i Face ID <b>↗</b></button>
+            <button type="button" data-service="Diagnostyka płyty głównej"><span>04</span> Płyty główne <b>↗</b></button>
+          </div>
+          <button class="button button-outline" id="service-cta" type="button">Umów naprawę</button>
+        </div>
+      </section>
+
+      <section class="process section shell" aria-labelledby="process-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">— 05 / Jak działamy</p>
+            <h2 id="process-title">Prosto. Przejrzyście. Bez kompromisów.</h2>
+          </div>
+        </div>
+        <div class="process-track">
+          <article><span>01</span><h3>Wybierasz</h3><p>Znajdujesz model z kolekcji lub zlecasz nam poszukiwanie konkretnej konfiguracji.</p></article>
+          <article><span>02</span><h3>Potwierdzamy</h3><p>Otrzymujesz zdjęcia, kartę stanu urządzenia i wszystkie informacje przed zakupem.</p></article>
+          <article><span>03</span><h3>Dostarczamy</h3><p>Bezpieczna przesyłka, gotowe urządzenie i pomoc przy pierwszej konfiguracji.</p></article>
+        </div>
+      </section>
+
+      <section class="faq section" aria-labelledby="faq-title">
+        <div class="shell faq-grid">
+          <div>
+            <p class="section-index">— 06 / Informacje</p>
+            <h2 id="faq-title">Najczęstsze pytania.</h2>
+          </div>
+          <div class="accordion">
+            <article class="accordion-item">
+              <button type="button" aria-expanded="false">Czy przed zakupem zobaczę dokładny stan telefonu?<span>+</span></button>
+              <div><p>Tak. Przed zakupem otrzymasz informacje o stanie wizualnym, kondycji baterii i wyniku diagnostyki konkretnego egzemplarza.</p></div>
+            </article>
+            <article class="accordion-item">
+              <button type="button" aria-expanded="false">Czy mogę oddać swój telefon w rozliczeniu?<span>+</span></button>
+              <div><p>Tak. Po weryfikacji stanu urządzenia jego wartość możemy odjąć od ceny wybranego przez Ciebie modelu.</p></div>
+            </article>
+            <article class="accordion-item">
+              <button type="button" aria-expanded="false">Jak wygląda wysyłka do serwisu?<span>+</span></button>
+              <div><p>Po zgłoszeniu otrzymasz instrukcję zabezpieczenia telefonu i etykietę wysyłkową. Po diagnozie potwierdzimy koszt przed rozpoczęciem naprawy.</p></div>
+            </article>
+            <article class="accordion-item">
+              <button type="button" aria-expanded="false">Czy urządzenia mają oryginalne części?<span>+</span></button>
+              <div><p>Każdy egzemplarz opisujemy indywidualnie. Informacja o historii części i napraw znajduje się na karcie urządzenia — bez ukrywania wymian.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-glow" aria-hidden="true"></div>
+        <div class="shell contact-inner">
+          <p class="section-index">— Kontakt</p>
+          <h2 id="contact-title">Znajdźmy Twój następny telefon.</h2>
+          <p>Napisz, jakiego modelu szukasz albo opowiedz nam o usterce.</p>
+          <div class="contact-actions">
+            <a class="button button-light" href="https://wa.me/48531924806" target="_blank" rel="noopener">Napisz na WhatsApp</a>
+            <a class="text-link" href="mailto:aurenzo.mobile@gmail.com">aurenzo.mobile@gmail.com <span>↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-brand">
+          <span class="brand-name">AURENZO</span><span class="brand-sub">MOBILE</span>
+          <p>Wyselekcjonowane urządzenia.<br />Serwis bez kompromisów.</p>
+        </div>
+        <div class="footer-columns">
+          <div><h3>Oferta</h3><a href="#collection">Telefony</a><a href="#sell">Skup i wymiana</a><a href="#service">Serwis</a></div>
+          <div><h3>Firma</h3><a href="#about">O nas</a><a href="#faq-title">FAQ</a><a href="#contact">Kontakt</a><a href="admin.html">Panel sprzedawcy</a></div>
+          <div><h3>Kontakt</h3><a href="mailto:aurenzo.mobile@gmail.com">aurenzo.mobile@gmail.com</a><a href="https://wa.me/48531924806" target="_blank" rel="noopener">WhatsApp: 531 924 806</a><span>Polska</span></div>
+        </div>
+      </div>
+      <div class="shell footer-legal">
+        <span>© 2026 Aurenzo Mobile</span>
+        <p>Aurenzo Mobile jest niezależnym sprzedawcą i serwisem. Apple oraz iPhone są znakami towarowymi Apple Inc.</p>
+        <div><a href="#">Polityka prywatności</a><a href="#">Regulamin</a></div>
+      </div>
+    </footer>
+
+    <dialog class="product-modal" id="product-modal">
+      <button class="modal-close" type="button" aria-label="Zamknij">×</button>
+      <div class="modal-layout">
+        <div class="modal-visual"><div class="phone-visual phone-natural"><div class="camera-island"><i></i><i></i><i></i><b></b></div></div></div>
+        <div class="modal-copy">
+          <p class="eyebrow">Aurenzo verified</p>
+          <h2>iPhone 15 Pro Max</h2>
+          <p class="modal-description">Tytan naturalny · 256 GB · kondycja A+</p>
+          <div class="modal-specs">
+            <div><span>Kondycja baterii</span><strong>96%</strong></div>
+            <div><span>Wysyłka</span><strong>24 godziny</strong></div>
+          </div>
+          <div class="modal-price"><span>Cena egzemplarza</span><strong>4 899 zł</strong></div>
+          <a class="button button-dark" href="#contact">Zapytaj o urządzenie <span>↗</span></a>
+          <small>Przed zakupem otrzymasz komplet zdjęć oraz kartę stanu urządzenia.</small>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="service-modal" id="service-modal">
+      <button class="modal-close" type="button" aria-label="Zamknij">×</button>
+      <div class="service-modal-inner">
+        <p class="section-index">Zgłoszenie serwisowe</p>
+        <h2>Opowiedz nam o usterce.</h2>
+        <form id="service-form">
+          <div class="form-row">
+            <label>Model urządzenia<input name="device" type="text" placeholder="np. iPhone 13 Pro" required /></label>
+            <label>Rodzaj naprawy<select name="repair" required><option value="" selected disabled>Wybierz</option><option>Wymiana wyświetlacza</option><option>Wymiana baterii</option><option>Naprawa aparatu</option><option>Diagnostyka płyty głównej</option><option>Inna usterka</option></select></label>
+          </div>
+          <label>Co się stało?<textarea name="details" rows="4" placeholder="Krótko opisz objawy lub uszkodzenie" required></textarea></label>
+          <label>Telefon lub e-mail<input name="contact" type="text" placeholder="Dane do kontaktu" required /></label>
+          <button class="button button-dark" type="submit">Wyślij zgłoszenie <span>↗</span></button>
+        </form>
+      </div>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite"><span>✓</span><p>Zgłoszenie zapisane. Skontaktujemy się z Tobą.</p></div>
+  </body>
+</html>

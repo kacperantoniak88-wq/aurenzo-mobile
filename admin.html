@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <title>Panel sprzedawcy — Aurenzo Mobile</title>
+    <link rel="icon" type="image/png" href="assets/aurenzo-social-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script defer src="catalog-store.js"></script>
+    <script defer src="github-catalog.js"></script>
+    <script defer src="admin.js"></script>
+  </head>
+  <body class="admin-body">
+    <header class="admin-header">
+      <a class="brand" href="index.html" aria-label="Aurenzo Mobile — strona główna">
+        <span class="brand-name">AURENZO</span>
+        <span class="brand-sub">MOBILE</span>
+      </a>
+      <div>
+        <span>Panel sprzedawcy</span>
+        <a class="admin-back" href="index.html#collection">Zobacz sklep ↗</a>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-intro">
+        <p class="section-index">— Zarządzanie ofertą</p>
+        <h1>Dodaj telefon.<br /><em>Bez grzebania w kodzie.</em></h1>
+        <p>Wybierz zdjęcia, uzupełnij informacje i kliknij jeden przycisk. Nowy model od razu pojawi się w katalogu.</p>
+      </section>
+
+      <section class="github-panel admin-panel" aria-labelledby="github-title">
+        <div class="admin-panel-heading">
+          <div><span>00</span><h2 id="github-title">Połączenie z GitHub Pages</h2></div>
+          <strong class="connection-dot" id="connection-dot" aria-hidden="true"></strong>
+        </div>
+        <div class="github-panel-body">
+          <div class="github-copy">
+            <p id="connection-status">Połącz repozytorium, aby każda zmiana oferty była publikowana dla wszystkich klientów.</p>
+            <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Utwórz token fine-grained ↗</a>
+            <small>Token ogranicz do jednego repozytorium i ustaw wyłącznie <b>Contents: Read and write</b>. Token jest przechowywany tylko do zamknięcia karty.</small>
+          </div>
+          <form class="github-form" id="github-form">
+            <label>Właściciel repozytorium<input name="owner" type="text" placeholder="np. aurenzo-mobile" required /></label>
+            <label>Nazwa repozytorium<input name="repo" type="text" placeholder="np. sklep" required /></label>
+            <label>Branch<input name="branch" type="text" value="main" required /></label>
+            <label>Token GitHub<input name="token" type="password" autocomplete="off" placeholder="github_pat_…" required /></label>
+            <button class="button button-dark github-connect" type="submit">Połącz i wczytaj ofertę <span>↗</span></button>
+          </form>
+        </div>
+      </section>
+
+      <div class="admin-layout">
+        <section class="admin-panel add-panel" aria-labelledby="add-title">
+          <div class="admin-panel-heading">
+            <div><span>01</span><h2 id="add-title">Nowe urządzenie</h2></div>
+            <small>maks. 4 zdjęcia</small>
+          </div>
+
+          <form id="product-form">
+            <label class="upload-zone" for="product-images">
+              <input id="product-images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple />
+              <span class="upload-icon">+</span>
+              <strong>Dodaj zdjęcia telefonu</strong>
+              <small>Kliknij albo przeciągnij pliki JPG, PNG lub WebP</small>
+            </label>
+            <div class="image-preview" id="image-preview" aria-live="polite"></div>
+
+            <div class="admin-form-grid">
+              <label>Model<input name="title" type="text" placeholder="np. iPhone 15 Pro" required /></label>
+              <label>Cena brutto<input name="price" type="number" min="1" step="1" placeholder="np. 4199" required /></label>
+              <label>Rok<select name="year" required><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option></select></label>
+              <label>Pamięć<select name="storage" required><option>64 GB</option><option selected>128 GB</option><option>256 GB</option><option>512 GB</option><option>1 TB</option></select></label>
+              <label>Kolor<input name="color" type="text" placeholder="np. Tytan naturalny" required /></label>
+              <label>Stan<select name="condition" required><option>A+</option><option selected>A</option><option>B+</option><option>B</option></select></label>
+              <label>Kondycja baterii<input name="battery" type="text" placeholder="np. 94%" required /></label>
+              <label class="admin-span-2">Etykieta oferty<input name="badge" type="text" value="Nowość" placeholder="np. Ostatnia sztuka" required /></label>
+            </div>
+
+            <button class="button button-dark admin-submit" type="submit">Dodaj do aktualnej oferty <span>↗</span></button>
+            <p class="admin-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="admin-panel inventory-panel" aria-labelledby="inventory-title">
+          <div class="admin-panel-heading">
+            <div><span>02</span><h2 id="inventory-title">Aktualne modele</h2></div>
+            <strong id="inventory-count">0</strong>
+          </div>
+          <div class="inventory-list" id="inventory-list"></div>
+        </section>
+      </div>
+
+      <section class="admin-tools" aria-label="Kopia katalogu">
+        <div>
+          <p class="section-index">— Kopia bezpieczeństwa</p>
+          <h2>Przenieś katalog.</h2>
+          <p>Wyeksportuj listę razem ze zdjęciami albo zaimportuj ją w drugiej przeglądarce.</p>
+        </div>
+        <div class="admin-tool-buttons">
+          <button class="button button-outline" id="export-catalog" type="button">Eksportuj katalog</button>
+          <label class="button button-outline import-button">Importuj katalog<input id="import-catalog" type="file" accept="application/json" /></label>
+          <button class="admin-reset" id="reset-catalog" type="button">Przywróć przykładową ofertę</button>
+        </div>
+      </section>
+
+      <aside class="admin-notice">
+        <strong>Bezpieczeństwo:</strong> plik <code>admin.html</code> może być publiczny — bez Twojego tokenu nikt nie zapisze zmian. Nie wysyłaj tokenu innym osobom i nigdy nie wpisuj go do plików repozytorium.
+      </aside>
+    </main>
+  </body>
+</html>
