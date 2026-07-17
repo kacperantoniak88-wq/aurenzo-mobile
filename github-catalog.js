@@ -36,6 +36,7 @@
 
   let settings = detectSettings();
   let token = sessionStorage.getItem(TOKEN_KEY) || "";
+  let catalogSha = null;
 
   const configure = (nextSettings, nextToken) => {
     settings = {
@@ -59,20 +60,24 @@
       throw new Error("Uzupełnij dane repozytorium i token GitHub.");
     }
 
+    const { allowNotFound = false, ...fetchOptions } = options;
     const response = await fetch(url, {
-      ...options,
-      headers: { ...headers(), ...(options.headers || {}) },
+      ...fetchOptions,
+      headers: { ...headers(), ...(fetchOptions.headers || {}) },
     });
 
-    if (response.status === 404 && options.allowNotFound) return null;
+    if (response.status === 404 && allowNotFound) return null;
 
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) {
       const details = payload.message ? `: ${payload.message}` : "";
-      if (response.status === 401) throw new Error("Token GitHub jest nieprawidłowy albo wygasł.");
-      if (response.status === 403) throw new Error("Token nie ma uprawnienia Contents: Read and write do tego repozytorium.");
-      if (response.status === 404) throw new Error("Nie znaleziono repozytorium lub pliku. Sprawdź właściciela, nazwę i branch.");
-      throw new Error(`GitHub zwrócił błąd ${response.status}${details}`);
+      let error;
+      if (response.status === 401) error = new Error("Token GitHub jest nieprawidłowy albo wygasł.");
+      else if (response.status === 403) error = new Error("Token nie ma uprawnienia Contents: Read and write do tego repozytorium.");
+      else if (response.status === 404) error = new Error("Nie znaleziono repozytorium lub pliku. Sprawdź właściciela, nazwę i branch.");
+      else error = new Error(`GitHub zwrócił błąd ${response.status}${details}`);
+      error.status = response.status;
+      throw error;
     }
     return payload;
   };
@@ -80,7 +85,10 @@
   const repositoryUrl = () => `${API_ROOT}/repos/${encodeURIComponent(settings.owner)}/${encodeURIComponent(settings.repo)}`;
   const contentUrl = (path) => `${repositoryUrl()}/contents/${encodePath(path)}`;
 
-  const getFile = (path) => request(`${contentUrl(path)}?ref=${encodeURIComponent(settings.branch)}`, { allowNotFound: true });
+  const getFile = (path) => request(
+    `${contentUrl(path)}?ref=${encodeURIComponent(settings.branch)}&_=${Date.now()}`,
+    { allowNotFound: true, cache: "no-store" },
+  );
 
   const putFile = async (path, content, message, sha = null) => request(contentUrl(path), {
     method: "PUT",
@@ -96,7 +104,11 @@
   const connect = async () => {
     await request(repositoryUrl());
     const catalogFile = await getFile("data/catalog.json");
-    if (!catalogFile) return window.AurenzoCatalog.defaults;
+    if (!catalogFile) {
+      catalogSha = null;
+      return window.AurenzoCatalog.defaults;
+    }
+    catalogSha = catalogFile.sha;
     const products = JSON.parse(base64ToText(catalogFile.content));
     window.AurenzoCatalog.set(products, { savePreview: false });
     return products;
@@ -114,9 +126,23 @@
   };
 
   const saveCatalog = async (products, message = "Aurenzo: aktualizacja oferty") => {
-    const existing = await getFile("data/catalog.json");
     const content = textToBase64(`${JSON.stringify(products, null, 2)}\n`);
-    await putFile("data/catalog.json", content, message, existing?.sha);
+    if (!catalogSha) {
+      const existing = await getFile("data/catalog.json");
+      catalogSha = existing?.sha || null;
+    }
+
+    let result;
+    try {
+      result = await putFile("data/catalog.json", content, message, catalogSha);
+    } catch (error) {
+      if (error.status !== 409) throw error;
+      const current = await getFile("data/catalog.json");
+      catalogSha = current?.sha || null;
+      result = await putFile("data/catalog.json", content, message, catalogSha);
+    }
+
+    catalogSha = result?.content?.sha || null;
     window.AurenzoCatalog.set(products, { savePreview: false });
     return products;
   };
